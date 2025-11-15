@@ -1,0 +1,31 @@
+# 📦 종속성 및 빌드 파일
+node_modules
+# npm 로그 파일
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# 🛠️ 빌드/컴파일된 파일
+# TypeScript 프로젝트의 경우 JavaScript 출력 폴더 (예: 'dist' 또는 'build')
+/dist
+/build
+
+# 🔑 환경 및 보안
+# 환경 변수 파일. DB 비밀번호 등 민감한 정보가 포함되므로 반드시 제외합니다.
+.env
+.env.development
+.env.production
+
+# 💻 IDE 및 OS 관련 파일
+# VS Code 설정 파일 (개인 설정이므로 공유하지 않습니다)
+.vscode/
+
+# 운영체제가 생성하는 숨김 파일
+.DS_Store
+Thumbs.db
+
+# 💾 데이터 및 로그 파일 (프로젝트 내에 저장된 데이터베이스 역할 파일)
+/data
+*.sqlite
+*.db
+/logs

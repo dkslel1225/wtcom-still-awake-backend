@@ -1,0 +1,153 @@
+{
+  "availableRooms": [
+    101,
+    103,
+    104,
+    106,
+    203,
+    204,
+    205,
+    207,
+    301,
+    302,
+    304,
+    306,
+    307,
+    401,
+    402,
+    403,
+    404,
+    406
+  ],
+  "activatedRooms": [
+    305,
+    202,
+    303,
+    105,
+    102,
+    206,
+    107,
+    407,
+    405,
+    201
+  ],
+  "registered": [
+    {
+      "room": 305,
+      "user": {
+        "job": "No Job",
+        "name": "Anonymous",
+        "nickName": "No Job"
+      }
+    },
+    {
+      "room": 202,
+      "user": {
+        "job": "No Job",
+        "name": "Anonymous",
+        "nickName": "No Job"
+      }
+    },
+    {
+      "room": 303,
+      "user": {
+        "job": "No Job",
+        "name": "Anonymous",
+        "nickName": "No Job"
+      }
+    },
+    {
+      "room": 105,
+      "user": {
+        "job": "No Job",
+        "name": "Anonymous",
+        "nickName": "No Job"
+      }
+    },
+    {
+      "room": 102,
+      "user": {
+        "job": "No Job",
+        "name": "Anonymous",
+        "nickName": "No Job"
+      }
+    },
+    {
+      "room": 206,
+      "user": {
+        "job": "No Job",
+        "name": "Anonymous",
+        "nickName": "No Job"
+      }
+    },
+    {
+      "room": 107,
+      "user": {
+        "job": "No Job",
+        "name": "Anonymous",
+        "nickName": "No Job"
+      }
+    },
+    {
+      "room": 407,
+      "user": {
+        "job": "No Job",
+        "name": "Anonymous",
+        "nickName": "No Job"
+      }
+    },
+    {
+      "room": 405,
+      "user": {
+        "job": "No Job",
+        "name": "Anonymous",
+        "nickName": "No Job"
+      }
+    },
+    {
+      "room": 201,
+      "user": {
+        "job": "No Job",
+        "name": "Anonymous",
+        "nickName": "No Job"
+      }
+    }
+  ],
+  "guests": [
+    {
+      "job": "No Job",
+      "name": "Anonymous",
+      "nickName": "No Job"
+    },
+    {
+      "job": "No Job",
+      "name": "Anonymous",
+      "nickName": "No Job"
+    },
+    {
+      "job": "No Job",
+      "name": "Anonymous",
+      "nickName": "No Job"
+    },
+    {
+      "job": "No Job",
+      "name": "Anonymous",
+      "nickName": "No Job"
+    },
+    {
+      "job": "No Job",
+      "name": "Anonymous",
+      "nickName": "No Job"
+    },
+    {
+      "job": "No Job",
+      "name": "Anonymous",
+      "nickName": "No Job"
+    },
+    {
+      "job": "No Job",
+      "name": "Anonymous",
+      "nickName": "No Job"
+    }
+  ]
+}
