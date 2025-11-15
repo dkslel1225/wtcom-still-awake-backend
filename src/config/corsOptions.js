@@ -1,3 +1,8 @@
 export const corsOptions = {
-  origin: ["http://localhost:3000", "https://wtcom-still-awake-fe.vercel.app"],
+  origin: [
+    "https://wtcom-still-awake-frontend.vercel.app",
+    "http://localhost:3000",
+  ],
+  methods: ["GET", "POST"],
+  credentials: true,
 };
