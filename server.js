@@ -1,28 +1,37 @@
-// import express from "express";
-// import cors from "cors";
-// import userRoutes from "./src/routes/userRoutes.js";
-// import { corsOptions } from "./src/config/corsOptions.js";
+import express from "express";
+import cors from "cors";
+import { createServer } from "http";
+import { Server } from "socket.io";
+import { corsOptions } from "./src/config/corsOptions.js";
 
-// const app = express();
-// const PORT = 4000;
+import { submitUserData } from "./src/controllers/postController.js";
+import { initializeSocket } from "./src/controllers/initializeSocket.js";
 
-// // 미들웨어
-// app.use(express.json());
-// app.use(cors(corsOptions));
-
-// // 사용자 관련 라우트
-// app.use("/", userRoutes);
-
-// // 서버 실행
-// app.listen(PORT, () => {
-//   console.log(`✅ Server is running on http://localhost:${PORT}`);
-// });
-
-import app from "./src/app.js";
-
-// 배포하면 PORT 서버 주소로 설정하기 //현재는 임시 4000포트에서 서버 실행
 const PORT = process.env.PORT || 4000;
+export const app = express(); // express 앱
 
-app.listen(PORT, () => {
+// 미들웨어 설정
+app.use(cors(corsOptions));
+app.use(express.json());
+
+// 서버 구동 및 socket.io 적용
+// HTTP 서버 객체 생성 (Socket.IO의 기반)
+const httpServer = createServer(app);
+
+// Socket.IO 서버 생성 및 HTTP 서버에 연결
+const io = new Server(httpServer, {
+  cors: {
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST"],
+  },
+});
+initializeSocket(io); //Socket.IO 로직 초기화
+
+// HTTP 라우팅 목록
+app.use("/submit/userdata", submitUserData(io)); //submitUserData 컨트롤러가 io를 인수로 받음
+
+// HTTP 서버 리스닝 시작
+httpServer.listen(PORT, () => {
   console.log(`✅ Server running on http://localhost:${PORT}`);
+  console.log(`⚡️ Socket.IO attached to port ${PORT}`);
 });
