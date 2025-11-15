@@ -21,7 +21,7 @@ const httpServer = createServer(app);
 // Socket.IO 서버 생성 및 HTTP 서버에 연결
 const io = new Server(httpServer, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: process.env.CLIENT_ORIGIN,
     methods: ["GET", "POST"],
   },
 });
