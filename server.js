@@ -21,7 +21,7 @@ const httpServer = createServer(app);
 // Socket.IO 서버 생성 및 HTTP 서버에 연결
 const io = new Server(httpServer, {
   cors: corsOptions,
-  transports: ["websocket"],
+  transports: ["polling", "websocket"],
 });
 initializeSocket(io); //Socket.IO 로직 초기화
 
