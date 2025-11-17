@@ -22,7 +22,6 @@ const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: corsOptions,
   transports: ["websocket"],
-  allowUpgrades: false,
 });
 initializeSocket(io); //Socket.IO 로직 초기화
 
