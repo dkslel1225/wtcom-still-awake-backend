@@ -6,6 +6,7 @@ import { corsOptions } from "./src/config/corsOptions.js";
 
 import { submitUserData } from "./src/controllers/postController.js";
 import { initializeSocket } from "./src/controllers/initializeSocket.js";
+import { getTargetDataController } from "./src/controllers/getTargetDataController.js";
 
 const PORT = process.env.PORT || 4000;
 export const app = express(); // express 앱
@@ -26,7 +27,8 @@ const io = new Server(httpServer, {
 initializeSocket(io); //Socket.IO 로직 초기화
 
 // HTTP 라우팅 목록
-app.use("/submit/userdata", submitUserData(io)); //submitUserData 컨트롤러가 io를 인수로 받음
+app.use("/submit/userdata", submitUserData(io)); //submitUserData 컨트롤러가 io를 인수로 받음(activatedRooms데이터를 emit하기 위해)
+app.get("/targethost/:roomNumber", getTargetDataController());
 
 // HTTP 서버 리스닝 시작
 httpServer.listen(PORT, () => {
