@@ -4,9 +4,10 @@ import { createServer } from "http";
 import { Server } from "socket.io";
 import { corsOptions } from "./src/config/corsOptions.js";
 
-import { submitUserData } from "./src/controllers/postController.js";
 import { initializeSocket } from "./src/controllers/initializeSocket.js";
 import { getTargetDataController } from "./src/controllers/getTargetDataController.js";
+import { chatSocket } from "./src/controllers/chatSocket.js";
+import { postUserDataController } from "./src/controllers/postUserDataController.js";
 
 const PORT = process.env.PORT || 4000;
 export const app = express(); // express 앱
@@ -25,9 +26,12 @@ const io = new Server(httpServer, {
   transports: ["polling", "websocket"],
 });
 initializeSocket(io); //Socket.IO 로직 초기화
+// chat 네임 스페이스 생성
+const chat = io.of("/chat");
+chatSocket(chat);
 
 // HTTP 라우팅 목록
-app.use("/submit/userdata", submitUserData(io)); //submitUserData 컨트롤러가 io를 인수로 받음(activatedRooms데이터를 emit하기 위해)
+app.post("/submit/userdata", postUserDataController(io)); // 유저가 제출한 유저데이터 받음 // postUserDataController 컨트롤러가 io를 인수로 받음(activatedRooms데이터를 emit하기 위해)
 app.get("/targethost/:roomNumber", getTargetDataController());
 
 // HTTP 서버 리스닝 시작

@@ -1,7 +1,121 @@
 {
   "availableRooms": [
-    101, 102, 103, 104, 105, 106, 107, 201, 202, 203, 204, 205, 206, 207, 301,
-    302, 303, 304, 305, 306, 307, 401, 402, 403, 404, 405, 406, 407
+    101, 102, 103, 104, 105, 106, 107, 201, 202, 204, 206, 207, 301, 302, 303,
+    305, 307, 401, 402, 403, 404, 405, 406, 407, 304, 306, 203, 205
   ],
-  "activatedRooms": []
+  "activatedRooms": [],
+  "roomParticipants": [
+    {
+      "roomNum": 101,
+      "participants": []
+    },
+    {
+      "roomNum": 102,
+      "participants": []
+    },
+    {
+      "roomNum": 103,
+      "participants": []
+    },
+    {
+      "roomNum": 104,
+      "participants": []
+    },
+    {
+      "roomNum": 105,
+      "participants": []
+    },
+    {
+      "roomNum": 106,
+      "participants": []
+    },
+    {
+      "roomNum": 107,
+      "participants": []
+    },
+    {
+      "roomNum": 201,
+      "participants": []
+    },
+    {
+      "roomNum": 202,
+      "participants": []
+    },
+    {
+      "roomNum": 203,
+      "participants": []
+    },
+    {
+      "roomNum": 204,
+      "participants": []
+    },
+    {
+      "roomNum": 205,
+      "participants": []
+    },
+    {
+      "roomNum": 206,
+      "participants": []
+    },
+    {
+      "roomNum": 207,
+      "participants": []
+    },
+    {
+      "roomNum": 301,
+      "participants": []
+    },
+    {
+      "roomNum": 302,
+      "participants": []
+    },
+    {
+      "roomNum": 303,
+      "participants": []
+    },
+    {
+      "roomNum": 304,
+      "participants": []
+    },
+    {
+      "roomNum": 305,
+      "participants": []
+    },
+    {
+      "roomNum": 306,
+      "participants": []
+    },
+    {
+      "roomNum": 307,
+      "participants": []
+    },
+    {
+      "roomNum": 401,
+      "participants": []
+    },
+    {
+      "roomNum": 402,
+      "participants": []
+    },
+    {
+      "roomNum": 403,
+      "participants": []
+    },
+    {
+      "roomNum": 404,
+      "participants": []
+    },
+    {
+      "roomNum": 405,
+      "participants": []
+    },
+    {
+      "roomNum": 406,
+      "participants": []
+    },
+    {
+      "roomNum": 407,
+      "participants": []
+    }
+  ]
 }
