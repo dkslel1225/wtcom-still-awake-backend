@@ -1,11 +1,11 @@
 import { UserRegService } from "../services/UserRegistrationService.js";
 
 // * 내 방 차지하는 요청들어올때 - 순차적으로 처리해야할듯 - 싱글스레드로
-export const submitUserData = (io) => (req, res) => {
+export const postUserDataController = (io) => (req, res) => {
   const { room, job, name, calledAsName, avatarNum, socketId } = req.body;
   const roomNum = Number(room);
   const nickName = calledAsName ? name : job;
-  const userDataZip = { roomNum, job, name, nickName, socketId };
+  const userDataZip = { roomNum, job, name, nickName, avatarNum, socketId };
 
   if (socketId == null) {
     //에러 전송
