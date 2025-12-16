@@ -32,6 +32,17 @@ export function chatSocket(io) {
       socket.to(roomNumber).emit("notification", participants); // 채팅방 참여자에게, 참여자 목록 업데이트
     });
 
+    // EVENT: 채팅 메시지 수신 (클라이언트 -> 서버)
+    socket.on("sendMessage", (data) => {
+      //  방 전체에 메시지 브로드캐스트
+      io.to(data.roomNumber).emit("receiveMessage", {
+        senderRoomNumber: data.senderRoomNumber,
+        sender: data.sender,
+        message: data.message,
+        timestamp: new Date().toISOString(), // 서버에서 최종 타임스탬프 부여
+      });
+    });
+
     // EVENT: 연결 끊김 (연결 해제 시에도 자동으로 모든 Room에서 나감)
     socket.on("disconnect", () => {
       if (currentChatRoom && currentNickname) {
